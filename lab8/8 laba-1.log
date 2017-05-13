@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  10 MAY 2017 23:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  13 MAY 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,250 +824,24 @@ LaTeX Font Warning: Font shape `T2A/cmr/bx/n' in size <20> not available
 
 [1
 
-]
-
-LaTeX Warning: File `1/1.eps' not found on input line 67.
-
-
-! LaTeX Error: File `1/1.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.67 \includegraphics[width=\textwidth]{1/1.eps}
-                                                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/1.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.67 \includegraphics[width=\textwidth]{1/1.eps}
-                                                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+] [1]
 File: 1/1.eps Graphic file (type eps)
-<1/1.eps>
-
-LaTeX Warning: File `1/graniza.eps' not found on input line 75.
-
-
-! LaTeX Error: File `1/graniza.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75 ...egraphics[width=\textwidth]{1/graniza.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/graniza.eps (no BoundingBo
-x).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75 ...egraphics[width=\textwidth]{1/graniza.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/1.eps>
 File: 1/graniza.eps Graphic file (type eps)
-<1/graniza.eps> [1]
-
-LaTeX Warning: File `1/yst.eps' not found on input line 84.
-
-
-! LaTeX Error: File `1/yst.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84 \includegraphics[width=\textwidth]{1/yst.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/yst.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.84 \includegraphics[width=\textwidth]{1/yst.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/graniza.eps>
 File: 1/yst.eps Graphic file (type eps)
-<1/yst.eps> [2]
-
-LaTeX Warning: File `1/neyst.eps' not found on input line 93.
-
-
-! LaTeX Error: File `1/neyst.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.93 ...udegraphics[width=\textwidth]{1/neyst.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/neyst.eps (no BoundingBox)
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.93 ...udegraphics[width=\textwidth]{1/neyst.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/yst.eps> [2]
 File: 1/neyst.eps Graphic file (type eps)
-<1/neyst.eps> [3]
-
-LaTeX Warning: File `1/neitr.eps' not found on input line 101.
-
-
-! LaTeX Error: File `1/neitr.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...degraphics[width=\textwidth]{1/neitr.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/neitr.eps (no BoundingBox)
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...degraphics[width=\textwidth]{1/neitr.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/neyst.eps>
 File: 1/neitr.eps Graphic file (type eps)
-<1/neitr.eps> [4]
-
-LaTeX Warning: File `1/koleb.eps' not found on input line 111.
-
-
-! LaTeX Error: File `1/koleb.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 ...degraphics[width=\textwidth]{1/koleb.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/koleb.eps (no BoundingBox)
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 ...degraphics[width=\textwidth]{1/koleb.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/neitr.eps>
+[3]
 File: 1/koleb.eps Graphic file (type eps)
-<1/koleb.eps> [5] [6]
-
-LaTeX Warning: File `1/rasch.eps' not found on input line 166.
-
-
-! LaTeX Error: File `1/rasch.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.166 ...degraphics[width=\textwidth]{1/rasch.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/rasch.eps (no BoundingBox)
-.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.166 ...degraphics[width=\textwidth]{1/rasch.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/koleb.eps> [4] [5]
 File: 1/rasch.eps Graphic file (type eps)
-<1/rasch.eps>
-
-LaTeX Warning: File `1/exp.eps' not found on input line 172.
-
-
-! LaTeX Error: File `1/exp.eps' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.172 ...ludegraphics[width=\textwidth]{1/exp.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Cannot determine size of graphic in 1/exp.eps (no BoundingBox).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.172 ...ludegraphics[width=\textwidth]{1/exp.eps}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ <1/rasch.eps>
 File: 1/exp.eps Graphic file (type eps)
-<1/exp.eps> [7]
-Overfull \hbox (1.27238pt too wide) in paragraph at lines 177--180
-\T2A/cmr/m/n/10.95 ¬ хо-де про-ве-де-ни€ дан-ной ла-бо-ра-тор-ной ра-бо-ты, бы-
-ла по-лу-че-на эк-пе-ри-мен-таль-на€ гра-ни-ца устой-
- []
-
-[8] (./8 laba-1.aux)
+ <1/exp.eps> [6] [7] [8] (./8 laba-1.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -1075,12 +849,12 @@ LaTeX Font Warning: Size substitutions with differences
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 4710 strings out of 493014
- 63411 string characters out of 6139343
- 133944 words of memory out of 5000000
- 8166 multiletter control sequences out of 15000+600000
+ 4712 strings out of 493014
+ 63453 string characters out of 6139343
+ 135017 words of memory out of 5000000
+ 8168 multiletter control sequences out of 15000+600000
  19130 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,39p,1256b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,39p,1470b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on "8 laba-1.dvi" (9 pages, 11884 bytes).
+Output written on "8 laba-1.dvi" (9 pages, 14632 bytes).
