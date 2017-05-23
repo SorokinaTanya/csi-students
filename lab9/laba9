@@ -1,0 +1,362 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[T1, T2A]{fontenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage[margin=14pt,font=small,labelsep=endash]{caption}
+\captionsetup[figure]{labelformat=simple, labelsep = endash, name = Рисунок}
+\captionsetup[table]{name = Таблица, labelsep = endash, justification=raggedright, singlelinecheck=false}
+\usepackage{float}
+\usepackage{geometry} %способ ручной установки полей
+\geometry{top=2cm} %поле сверху
+\geometry{bottom=2cm} %поле снизу
+\geometry{left=2cm} %поле справа
+\geometry{right=2cm} %поле слева
+\usepackage{amsmath}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+\newcommand\nameLine[3]{$\underset{\text{#1}}{\text{\underline{\text{#2}\hspace{#3}}}}$}
+
+%opening
+\title{}
+\author{}
+
+\begin{document}
+\begin{titlepage}
+		\centering
+		{\fontsize{12pt}{5cm}\selectfont \bfseries Министерство образования и науки Российской Федерации} \\ \vspace{0.5cm}
+		{\fontsize{7pt}{5cm}\selectfont ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ} \\ 
+		\vspace{1cm}
+		{\fontsize{12pt}{5cm}\selectfont \bfseries САНКТ-ПЕТЕРБУРГСКИЙ УНИВЕРСИТЕТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ, МЕХАНИКИ И ОПТИКИ} \\ \vspace{1.5cm}
+
+		{\fontsize{14pt}{5cm}\selectfont Кафедра \hspace{1cm} \underline{Систем Управления и Информатики}  \hspace{1cm} Группа \underline{Р3340}} \\ 
+		\vspace{2cm}
+
+		{\fontsize{20pt}{5cm}\selectfont \bfseries Лабораторная работа №9} \\
+		{\fontsize{20pt}{5cm}\selectfont \bfseries Экспериментальное построение частотных характеристик типовых динамических звеньев} \\
+		{\fontsize{14pt}{5cm}\selectfont Вариант - 9} \\
+		\vspace{1.5cm}
+
+		\flushleft
+
+		{Выполнила \hspace{1,7cm} \nameLine{(фамилия, и.о.)}{Сорокина Т. В.}{6.3cm} (подпись)} \\
+		\vspace{2cm}
+
+		{Проверил \hspace{2cm} \tline{(фамилия, и.о.)}{9cm} (подпись)} \\
+		\vspace{5cm}
+
+		"\underline{\hspace{0.7cm}}"\hspace{0.2cm}\underline{\hspace{2cm}}\hspace{0.2cm}20\underline{\hspace{0.7cm}}г. \hspace{2cm} Санкт-Петербург, \hspace{2cm} 20\underline{\hspace{0.7cm}}г. \\ \vspace{1cm}
+
+		Работа выполнена с оценкой \hspace{1cm} \underline{\hspace{8cm}} \\ 
+		\vspace{1cm}
+		Дата защиты "\underline{\hspace{0.7cm}}"\hspace{0.2cm}\underline{\hspace{2cm}}\hspace{0.2cm}20\underline{\hspace{0.7cm}}г.
+
+	\end{titlepage}
+%\maketitle
+%\begin{abstract}
+%\end{abstract}
+
+\paragraph {Цель работы:} изучение частотных характеристик типовых динамических звеньев и способов их построения. \\
+\textbf{Исходные данные}
+\par В данной работе требуется получить частотные характеристики: АЧХ, ФЧХ, АФЧХ, ЛАФЧХ, ЛАЧХ заданных звеньев. Ислледовать реакцию звена на синусоидальное входное воздействие.
+Схема моделирования состоит из генератора синусоидального сигнала, исследуемого звена и устройств регистрации входного и выходного сигналов.
+\par 
+
+В таблице 1 представлены исходные динамические звенья.
+
+\begin{table} [h!]
+\centering
+\begin{threeparttable}
+\caption{Исходные динамические звенья}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ |c|c| } 
+ \hline
+ Тип звена & Передаточная функция \\ 
+ \hline
+ Колебательное & $W(s)=\displaystyle{\frac{k}{T^2s^2+2Ts\varepsilon+1}}$ \\ 
+ \hline
+ Идеальное интегрирующее & $W(s)=\displaystyle{\frac{k}{s}}$  \\ 
+ \hline
+ Дифференцирующее с замедлением & $W(s)=\displaystyle{\frac{ks}{1+Ts}}$  \\ 
+ \hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\par Параметры исследуемых звеньев: $k=10, T=2 c, \varepsilon=0.25, \frac{1}{T}=0.5 c^{-1}$.
+
+\newpage
+\begin{center}
+\section{Колебательное звено} 
+\end{center}
+
+\par На рисунке 1 представлена временная диаграмма колебательного звена.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/kolebat.eps}
+\caption{Временная диаграмма колебательного звена}
+\end{figure}
+
+В таблице 2 представлены экспериментальные данные колебательного звена.
+\begin{table} [H]
+\centering
+\begin{threeparttable}
+\caption{Экспериментальные данные колебательного звена}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+  w, рад/с & lg(w) & A(w) & L(w) & $\psi$(w),град \\ 
+ \hline
+  0.05 & -1.3 & 10.08 & 20.07 & -2.89 \\ 
+ \hline
+ 0.06 & -1.22 & 10.12 & 20.11 &-3.48   \\ 
+ \hline
+ 0.07 & -1.15 &-10.17 &20.15 & -4.08  \\ 
+ \hline
+ 0.1  & -1 & 10.36 & 20.31 & -5.95 \\
+ \hline
+ 0.4  & -0.39 & 18.58 & 25.38 & -48.01 \\
+ \hline
+ 0.7 & -0.15 & 8.42 &18.5 &-143.9 \\
+ \hline
+ 1 & 0 &3.16 &10 &-161.56 \\
+ \hline
+ 1.5 & 0.18 &1.23 &1.79 &-169.38 \\
+ \hline
+ 2 & 0.3 & 0.66 &-3.59 &-172.4 \\
+ \hline
+ 3.5 & 0.54 &0.2 &-13.65 &-175.83 \\
+ \hline
+ 4 & 0.6 &0.16 &-16 &-176.37 \\
+ \hline
+ 4.5 & 0.65 &0.12 &-18.07 &-176.78 \\
+ \hline
+ 5 &0.69 &0.1 &-19.92 &-177.11 \\
+ \hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+На рисунках 2 - 5 представлены частотные характеристики колебательного звена.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/kolebat_achx.eps}
+\caption{АЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/kolebat_fchx.eps}
+\caption{ФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/kolebat_lachx_lphchx.eps}
+\caption{ЛАЧХ и ЛФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/kolebat_neikw.eps}
+\caption{АФЧХ}
+\end{figure}
+
+\parВыполним построение асимптотической ЛАЧХ колебательного звена, представленное на рисунке 6.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/kolebat_lachx.eps}
+\caption{Асимптотическая ЛАЧХ колебательного звена}
+\end{figure}
+
+\newpage
+\begin{center}
+\section{Идеальное интегрирующее звено} 
+\end{center}
+
+На рисунке 7 представлена временная диаграмма идеального интегрирующего звена.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/integr.eps}
+\caption{Временная диаграмма идеального интегрирующего звена}
+\end{figure}
+
+В таблице 3 представлены экспериментальные данные идеального интегрирующего звена.
+\begin{table} [H]
+\centering
+\begin{threeparttable}
+\caption{Экспериментальные данные идеального интегрирующего звена}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+  w, рад/с & lg(w) & A(w) & L(w) & $\psi$(w),град \\ 
+ \hline
+  0.05 & -1.3 & 200 & 46.02 & -90 \\ 
+ \hline
+ 0.06 & -1.22 & 166.67 & 44.44 &-90   \\ 
+ \hline
+ 0.07 & -1.15 &142.86 &43.09 & -90  \\ 
+ \hline
+ 0.1  & -1 & 100 & 40 & -90 \\
+ \hline
+ 0.4  & -0.39 & 25 & 27.96 & -90 \\
+ \hline
+ 0.7 & -0.15 & 14.29 &23.09 &-90 \\
+ \hline
+ 1 & 0 &10 &20 &-90 \\
+ \hline
+ 1.5 & 0.18 &6.67 &16.48 &-90 \\
+ \hline
+ 2 & 0.3 & 5 &13.98 &-90 \\
+ \hline
+ 3.5 & 0.54 &2.86 &9.11 &-90 \\
+ \hline
+ 4 & 0.6 &2.5 &7.96 &-90 \\
+ \hline
+ 4.5 & 0.65 &2.22 &6.93 &-90 \\
+ \hline
+ 5 &0.69 &2 &6.02 &-90 \\
+ \hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+На рисунках 8 - 11 представлены частотные характеристики идеального интегрирующего звена.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/int_achx.eps}
+\caption{АЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/integr_fchx.eps}
+\caption{ФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/int_lachx_lafchx-1.eps}
+\caption{ЛАЧХ и ЛФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/integr_neikw.eps}
+\caption{АФЧХ}
+\end{figure}
+
+\par Выполним построение асимптотической ЛАЧХ идеального интегрирующего звена, представленное на рисунке 12.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/int_lachx-1.eps}
+\caption{Асимптотическая ЛАЧХ идеального интегрирующего звена}
+\end{figure}
+
+\newpage
+\begin{center}
+\section{Дифференцирующее звено с замедлением} 
+\end{center}
+
+На рисунке 13 представлена временная диаграмма  дифференцирующего звена с замедлением.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_graf.eps}
+\caption{Временная диаграмма дифференцирующего звена с замедлением}
+\end{figure}
+
+В таблице 4 представлены экспериментальные данные  дифференцирующего звена с замедлением.
+\begin{table} [H]
+\centering
+\begin{threeparttable}
+\caption{Экспериментальные данные  дифференцирующего звена с замедлением}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+  w, рад/с & lg(w) & A(w) & L(w) & $\psi$(w),град \\ 
+ \hline
+  0.05 & -1.3 & 0.49 & -6.02 & 286.48 \\ 
+ \hline
+ 0.06 & -1.22 & 0.59 & -4.43 & 238.73   \\ 
+ \hline
+ 0.07 & -1.15 & 0.69 & -3.09 & 204.63  \\ 
+ \hline
+ 0.1  & -1 & 0.99 & 0 & 143.24  \\
+ \hline
+ 0.4  & -0.39 & 3.88 & 11.78 & 35.8 \\
+ \hline
+ 0.7 & -0.15 & 6.08 & 15.68 &20.46 \\
+ \hline
+ 1 & 0 &7.45 &17.44 &14.32 \\
+ \hline
+ 1.5 & 0.18 &8.62 &18.71 &9.55 \\
+ \hline
+ 2 & 0.3 & 9.16 &19.24 &7.16 \\
+ \hline
+ 3.5 & 0.54 &9.7 &19.74 &4.09 \\
+ \hline
+ 4 & 0.6 &9.77 &19.8 &3.58 \\
+ \hline
+ 4.5 & 0.65 &9.82 &19.84 &3.18 \\
+ \hline
+ 5 &0.69 &9.85 &19.87 &2.86 \\
+ \hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+На рисунках 14 - 17 представлены частотные характеристики  дифференцирующего звена с замедлением.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_achx.eps}
+\caption{АЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_fchx.eps}
+\caption{ФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_lachx_lfchx.eps}
+\caption{ЛАЧХ и ЛФЧХ}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_afchx-1.eps}
+\caption{АФЧХ}
+\end{figure}
+
+\par Выполним построение асимптотической ЛАЧХ дифференцирующего звена с замедлением, представленное на рисунке 18.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/dif_lachx.eps}
+\caption{Асимптотическая ЛАЧХ дифференцирующего  звена с замедлением}
+\end{figure}
+
+
+
+
+\newpage
+\begin{center}
+\section*{Вывод} 
+\end{center}
+ \par  В данной лабораторной работе были изучены и построены частотные характеристики типовых динамических звеньев: колебательного,
+ идеального интегрирующего и дифференцирующего с замедлением. При построении характеристик ЛАЧХ и асимптотической \\ЛАЧХ можно заметить, что
+ асимптотическая ЛАЧХ сходится к построенной ЛАЧХ в ходе математического моделирования. При анализе полученных значений фаз
+ выходного сигнала можно сделать вывод, что у идеального интегрирующего звена фазовый сдвиг равен $-90^{\circ}$. Так же можно сделать вывод,
+ что у дифференцирующего звена с замедлением и у колебательного звена, при построении асимптотической ЛАЧХ, график менял наклон при
+ переходе через точку равную частоте среза.
+ 
+\end{document}
