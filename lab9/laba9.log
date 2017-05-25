@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  23 MAY 2017 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  26 MAY 2017 00:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,6 +890,6 @@ Here is how much of TeX's memory you used:
  8229 multiletter control sequences out of 15000+600000
  18306 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,39p,874b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,39p,1016b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on laba9.dvi (15 pages, 20448 bytes).
+Output written on laba9.dvi (15 pages, 20644 bytes).
