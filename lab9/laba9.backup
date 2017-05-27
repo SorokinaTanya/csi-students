@@ -98,12 +98,40 @@
 \includegraphics[width=0.8\textwidth]{1/kolebat.eps}
 \caption{Временная диаграмма колебательного звена}
 \end{figure}
+\par Частотная передаточная функция колебательного звена.
+\begin{equation}
+W(j\omega) = W(s)\big|_{s = j\omega} =\frac{k}{T^2s^2+2Ts\varepsilon+1}=\frac{k}{T^2(j\omega)^2+2Tj\omega\varepsilon+1}
+\end{equation}
+\begin{align*}
+W(j\omega)=\frac{k((1-T^2\omega^2)-(2jT\varepsilon\omega))}{(1-T^2\omega^2)^2-(2Tj\omega\varepsilon)^2}=
+\frac{k(1-T^2\omega^2))}{(1-T^2\omega^2)^2+(2T\omega\varepsilon)^2}-j\frac{2kT\omega\varepsilon}{(1-T^2\omega^2)^2+(2T\omega\varepsilon)^2}
+\end{align*}
+\par Вещественная часть:
+\begin{align}
+U(\omega)=\frac{k(1-T^2\omega^2)}{(1-T^2\omega^2)^2+(2T\varepsilon\omega))^2}=\frac{10-40\omega^2}{(1-4\omega^2)^2+\omega^2}
+\end{align}
+\par Мнимая часть:
+\begin{align}
+V(\omega)=\frac{-2Tk\varepsilon\omega}{(1-T^2\omega^2)^2+(2T\varepsilon\omega)^2}=\frac{-10\omega}{(1-4\omega^2)^2+\omega^2}
+\end{align}
+\par Модуль:
+\begin{align}
+A(\omega)=\sqrt{U(\omega)^2+V(\omega)^2}=10\sqrt{\frac{16\omega^4-7\omega^2+1}{((1-4\omega^2)^2+\omega^2)^2}}
+\end{align}
+\par Фаза ЧПФ:
+\begin{align}
+\psi(\omega)=\arctg{\frac{V(\omega)}{U(\omega)}}
+\end{align}
+\begin{align*}
+\psi(\omega)=-\arctg{\frac{\omega}{1-4\omega^2}},  \omega<=\frac{1}{T} \\
+\psi(\omega)=-\pi-\arctg{\frac{\omega}{1-4\omega^2}},  \omega>\frac{1}{T}
+\end{align*}
 
-В таблице 2 представлены экспериментальные данные колебательного звена.
+В таблице 2 представлены данные, полученные в ходе моделирования колебательного звена.
 \begin{table} [H]
 \centering
 \begin{threeparttable}
-\caption{Экспериментальные данные колебательного звена}
+\caption{ Данные, полученные в ходе моделирования колебательного звена}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabular}{ |c|c|c|c|c| } 
  \hline
@@ -178,19 +206,40 @@
 \section{Идеальное интегрирующее звено} 
 \end{center}
 
-На рисунке 7 представлена временная диаграмма идеального интегрирующего звена.
+\par На рисунке 7 представлена временная диаграмма идеального интегрирующего звена.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{1/integr.eps}
 \caption{Временная диаграмма идеального интегрирующего звена}
 \end{figure}
+\par Частотная передаточная функция идеального интегрирующего звена:
+\begin{equation}
+W(j\omega) = W(s)\big|_{s = j\omega} =\frac{k}{s}=\frac{k}{j\omega}=\frac{jk\omega}{-\omega^2}=-j\frac{k}{\omega}
+\end{equation}
+\par Вещественная часть:
+\begin{align*}
+U(\omega)=0
+\end{align*}
+\par Мнимая часть:
+\begin{align}
+V(\omega)=-\frac{k}{\omega}=-\frac{10}{\omega}
+\end{align}
 
-В таблице 3 представлены экспериментальные данные идеального интегрирующего звена.
+\par Модуль:
+\begin{align}
+A(\omega)=\frac{10}{\omega}
+\end{align}
+\par Фаза:
+\begin{align}
+\psi(\omega)=-\arctg{\frac{V(\omega)}{U(\omega)}}=-\arctg(\infty)=-\frac{\pi}{2}
+\end{align}
+
+В таблице 3 представлены данные, полученные в ходе моделирования идеального интегрирующего звена.
 \begin{table} [H]
 \centering
 \begin{threeparttable}
-\caption{Экспериментальные данные идеального интегрирующего звена}
+\caption{Данные, полученные в ходе моделирования идеального интегрирующего звена}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabular}{ |c|c|c|c|c| } 
  \hline
@@ -272,17 +321,40 @@
 \caption{Временная диаграмма дифференцирующего звена с замедлением}
 \end{figure}
 
-В таблице 4 представлены экспериментальные данные  дифференцирующего звена с замедлением.
+\par Частотная передаточная функция дифференцирующего звена с замедлением:
+\begin{equation}
+W(j\omega) = W(s)\big|_{s = j\omega} =\frac{ks}{1+Ts}=\frac{kj\omega}{1+Tj\omega}=\frac{jk\omega-Tj^2\omega^2k}{1^2-(Tj\omega)^2}=\frac{T\omega^2k}{1+T^2\omega^2}+j\frac{k\omega}{1+T^2\omega^2}
+\end{equation}
+\par Вещественная часть:
+\begin{align*}
+U(\omega)=\frac{T\omega^2k}{1+T^2\omega^2}=\frac{20\omega^2}{1+4\omega^2}
+\end{align*}
+\par Мнимая часть:
+\begin{align}
+V(\omega)=\frac{k\omega}{1+T^2\omega^2}=\frac{10\omega}{1+4\omega^2}
+\end{align}
+
+\par Модуль:
+\begin{align}
+A(\omega)=\sqrt{\frac{T^2\omega^4k^2+k^2\omega^2}{(1+T^2\omega^2)^2}}=\sqrt{\frac{400\omega^4+100\omega^2}{(1+4\omega^2)^2}}=10\omega\sqrt{\frac{4\omega^2+1}{(1+4\omega^2)^2}}=\frac{10\omega}{\sqrt{1+4\omega^2}}
+\end{align}
+\par Фаза:
+\begin{align}
+\psi(\omega)=\arctg{\frac{V(\omega)}{U(\omega)}}=\arctg(\frac{1}{2\omega})
+\end{align}
+
+
+В таблице 4 представлены данные, полученные в ходе моделирования  дифференцирующего звена с замедлением.
 \begin{table} [H]
 \centering
 \begin{threeparttable}
-\caption{Экспериментальные данные  дифференцирующего звена с замедлением}
+\caption{Данные, полученные в ходе моделирования дифференцирующего звена с замедлением}
 \renewcommand{\arraystretch}{1.8}
 \begin{tabular}{ |c|c|c|c|c| } 
  \hline
   w, рад/с & lg(w) & A(w) & L(w) & $\psi$(w),град \\ 
  \hline
-  0.05 & -1.3 & 0.49 & -6.02 & 286.48 \\ 
+  0.05 & -1.3 & 0.49 & -6.06 & 84.289 \\ 
  \hline
  0.06 & -1.22 & 0.59 & -4.43 & 238.73   \\ 
  \hline

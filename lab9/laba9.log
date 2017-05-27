@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  26 MAY 2017 00:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  27 MAY 2017 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -833,50 +833,50 @@ LaTeX Font Warning: Font shape `T2A/cmr/bx/n' in size <20> not available
 File: 1/kolebat.eps Graphic file (type eps)
  <1/kolebat.eps> [2]
 File: 1/kolebat_achx.eps Graphic file (type eps)
- <1/kolebat_achx.eps>
+ <1/kolebat_achx.eps> [3]
 File: 1/kolebat_fchx.eps Graphic file (type eps)
- <1/kolebat_fchx.eps> [3]
+ <1/kolebat_fchx.eps>
 File: 1/kolebat_lachx_lphchx.eps Graphic file (type eps)
 
-<1/kolebat_lachx_lphchx.eps>
+<1/kolebat_lachx_lphchx.eps> [4]
 File: 1/kolebat_neikw.eps Graphic file (type eps)
- <1/kolebat_neikw.eps> [4]
+ <1/kolebat_neikw.eps>
 File: 1/kolebat_lachx.eps Graphic file (type eps)
  <1/kolebat_lachx.eps>
-[5]
+[5] [6]
 File: 1/integr.eps Graphic file (type eps)
- <1/integr.eps> [6]
+ <1/integr.eps> [7]
 File: 1/int_achx.eps Graphic file (type eps)
  <1/int_achx.eps>
 File: 1/integr_fchx.eps Graphic file (type eps)
- <1/integr_fchx.eps> [7]
+ <1/integr_fchx.eps> [8]
 File: 1/int_lachx_lafchx-1.eps Graphic file (type eps)
 
 <1/int_lachx_lafchx-1.eps>
 File: 1/integr_neikw.eps Graphic file (type eps)
- <1/integr_neikw.eps> [8]
+ <1/integr_neikw.eps> [9]
 File: 1/int_lachx-1.eps Graphic file (type eps)
  <1/int_lachx-1.eps>
-Overfull \hbox (5.26292pt too wide) in paragraph at lines 255--260
+Overfull \hbox (5.26292pt too wide) in paragraph at lines 304--309
 []\T2A/cmr/m/n/12 Выполним по-стро-е-ние асимп-то-ти-че-ской ЛА-ЧХ иде-аль-но-г
 о ин-те-гри-ру-ю-ще-го зве-на, пред-
  []
 
-[9]
+[10]
 File: 1/dif_graf.eps Graphic file (type eps)
- <1/dif_graf.eps> [10]
+ <1/dif_graf.eps> [11]
 File: 1/dif_achx.eps Graphic file (type eps)
  <1/dif_achx.eps>
 File: 1/dif_fchx.eps Graphic file (type eps)
- <1/dif_fchx.eps> [11]
+ <1/dif_fchx.eps> [12]
 File: 1/dif_lachx_lfchx.eps Graphic file (type eps)
 
 <1/dif_lachx_lfchx.eps>
 File: 1/dif_afchx-1.eps Graphic file (type eps)
- <1/dif_afchx-1.eps> [12]
+ <1/dif_afchx-1.eps> [13]
 File: 1/dif_lachx.eps Graphic file (type eps)
- <1/dif_lachx.eps> [13]
-[14] (./laba9.aux)
+ <1/dif_lachx.eps> [14]
+[15] (./laba9.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -886,10 +886,10 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  4786 strings out of 493014
  64691 string characters out of 6139343
- 137283 words of memory out of 5000000
+ 142283 words of memory out of 5000000
  8229 multiletter control sequences out of 15000+600000
  18306 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,12n,39p,1016b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on laba9.dvi (15 pages, 20644 bytes).
+Output written on laba9.dvi (16 pages, 26588 bytes).
