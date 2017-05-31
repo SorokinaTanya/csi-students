@@ -1,0 +1,572 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[T1, T2A]{fontenc}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{caption}
+\usepackage{threeparttable}
+\usepackage[margin=14pt,font=small,labelsep=endash]{caption}
+\captionsetup[figure]{labelformat=simple, labelsep = endash, name = Рисунок}
+\captionsetup[table]{name = Таблица, labelsep = endash, justification=raggedright, singlelinecheck=false}
+\usepackage{float}
+\usepackage{geometry} %способ ручной установки полей
+\geometry{top=2cm} %поле сверху
+\geometry{bottom=2cm} %поле снизу
+\geometry{left=2cm} %поле справа
+\geometry{right=2cm} %поле слева
+\usepackage{amsmath}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+\newcommand\nameLine[3]{$\underset{\text{#1}}{\text{\underline{\text{#2}\hspace{#3}}}}$}
+\usepackage{makecell}
+%opening
+\title{}
+\author{}
+
+\begin{document}
+\begin{titlepage}
+		\centering
+		{\fontsize{12pt}{5cm}\selectfont \bfseries Министерство образования и науки Российской Федерации} \\ \vspace{0.5cm}
+		{\fontsize{7pt}{5cm}\selectfont ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ АВТОНОМНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ПРОФЕССИОНАЛЬНОГО ОБРАЗОВАНИЯ} \\ 
+		\vspace{1cm}
+		{\fontsize{12pt}{5cm}\selectfont \bfseries САНКТ-ПЕТЕРБУРГСКИЙ УНИВЕРСИТЕТ ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ, МЕХАНИКИ И ОПТИКИ} \\ \vspace{1.5cm}
+
+		{\fontsize{14pt}{5cm}\selectfont Кафедра \hspace{1cm} \underline{Систем Управления и Информатики}  \hspace{1cm} Группа \underline{Р3340}} \\ 
+		\vspace{2cm}
+
+		{\fontsize{20pt}{5cm}\selectfont \bfseries Лабораторная работа №10} \\
+		{\fontsize{20pt}{5cm}\selectfont \bfseries Исследование математической модели электромеханического объекта управления} \\
+		{\fontsize{14pt}{5cm}\selectfont Вариант - 9} \\
+		\vspace{1.5cm}
+
+		\flushleft
+
+		{Выполнила \hspace{1,7cm} \nameLine{(фамилия, и.о.)}{Сорокина Т. В.}{6.3cm} (подпись)} \\
+		\vspace{2cm}
+
+		{Проверил \hspace{2cm} \tline{(фамилия, и.о.)}{9cm} (подпись)} \\
+		\vspace{5cm}
+
+		"\underline{\hspace{0.7cm}}"\hspace{0.2cm}\underline{\hspace{2cm}}\hspace{0.2cm}20\underline{\hspace{0.7cm}}г. \hspace{2cm} Санкт-Петербург, \hspace{2cm} 20\underline{\hspace{0.7cm}}г. \\ \vspace{1cm}
+
+		Работа выполнена с оценкой \hspace{1cm} \underline{\hspace{8cm}} \\ 
+		\vspace{1cm}
+		Дата защиты "\underline{\hspace{0.7cm}}"\hspace{0.2cm}\underline{\hspace{2cm}}\hspace{0.2cm}20\underline{\hspace{0.7cm}}г.
+
+	\end{titlepage}
+%\maketitle
+%\begin{abstract}
+%\end{abstract}
+
+\paragraph {Цель работы:} изучение математических моделей и исследование характеристик электромеханического объекта управления, построенного на основе
+электродвигателя постоянного тока независимого возбуждения.
+\\
+\textbf{Исходные данные}
+\par Функциональная схема типичного электромеханического объекта представлена на рисунке 1. На рисунке 2 представлена структурная схема ЭМО.
+В таблице 1 представлены исходные данные, необходимые для выполнения данной лабораторной работы.  
+\\ В работе рассматривается электромеханический объект управления, выходным сигналом которого является угловое перемещение ИМ, а управляющим
+сигналом - входное напряжение УПУ. Измерение угловой скорости осуществляется на валу двигателя. Момент сопротивления Мсм, приложенный к 
+валу ИМ, выступает в качестве возмущающего воздействия.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{1/funk.eps}
+\caption{Функциональная схема типичного электромеханического объекта}
+\end{figure}
+
+
+\begin{table} [h!]
+\centering
+\begin{threeparttable}
+\caption{Исходные данные}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c|c| } 
+ \hline
+ \makecell{$U_\text{н},$В} & $n_{0}$, об/мин & \makecell{$I_\text{н},$A}  & \makecell{$M_\text{н},$Н$\cdot$м}  & R, Ом & \makecell{$T_\text{я},$мс} & \makecell{$J_\text{д},$кг$\cdot$м$^2$} & \makecell{$T_\text{y},$мс} & $i_{p}$ & \makecell{$J_\text{м},$кг$\cdot$м$^2$}  \\ 
+ \hline
+  27 & 2440 & 0.38 & 0.04 & 32 & 6 & $5.5*10^{-6}$ & 3 & 40 & 0.03  \\ 
+ \hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{1/strukt.eps}
+\caption{Структурная схема ЭМО}
+\end{figure}
+
+\newpage
+\begin{center}
+\section{Расчет параметров математической модели ЭМО} 
+\end{center}
+
+\par Выполним расчет параметров для полной модели ЭМО:
+\par $n_{0}=2440$ об/мин=255,52 рад/с
+\begin{align}
+ K_\text{e}=\frac{U_\text{н}}{\omega_{0}}=\frac{27}{255,52}=0,106 [\text{В*с/рад}]
+\end{align}
+\begin{align}
+K_\text{д}=\frac{1}{R}=0,031 [\text{См}]
+\end{align}
+\begin{align}
+K_\text{м}=\frac{M_\text{н}}{I_\text{н}}=\frac{0,04}{0,38}=0,105 [\text{Н*м/А}]
+\end{align}
+\begin{align}
+K_\text{y}=\frac{U_\text{н}}{U_\text{м}}=\frac{27}{10}=2,7[\text{В}]
+\end{align}
+\begin{align}
+J_\text{p}=0,2J_\text{д}=0,2*5,5*10^{-6}=1,1*10^{-6} [\text{кг*м}^2]
+\end{align}
+\begin{align}
+J_\Sigma = J_\text{д} + J_\text{p} + \frac{J_\text{м}}{i_\text{р}^2}=5,5*10^{-6}+1,1*10^{-6}+\frac{0,03}{40^2}=0,00002535 [\text{кг*м}^2]
+\end{align}
+\begin{align}
+ \frac{1}{J_\Sigma}=39447,73
+\end{align}
+\par Для упрощенной модели:
+\begin{align}
+K=\frac{K_\text{y}}{K_\text{e}*i_\text{р}}=\frac{2,7}{0,106*40}=0,637 [\text{рад/с}]
+\end{align}
+\begin{align}
+K_\text{f}=\frac{R}{K_\text{м}*K_\text{e}*i_\text{р}^2}=\frac{32}{0,105*0,106*40^2}=1,797 [\text{Ом*А*рад/(Н*м*В*с)}]
+\end{align}
+\begin{align}
+T_\text{м}=\frac{R*J_\Sigma}{K_\text{м}* K_\text{e}}=\frac{0,00002535*32}{0,105*0,106}=0,073 [\text{Ом*А*рад*кг*м}^2/(\text{Н*В*с)}]
+\end{align}
+
+\newpage
+\begin{center}
+\section{Математическое моделирование полной модели ЭМО} 
+\end{center}
+ \par На рисунке 3 представлена структурная схема полной модели ЭМО, составленная по схеме, изображенной на рисунке 2.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.1\textwidth]{1/strsxem.eps}
+\caption{Структурная схема полной модели ЭМО}
+\end{figure}
+\par Коэффициенты передачи измерительных устройств  $K_{U}, K_{\omega}, K_{I}, K_{\alpha}$ выберем таким образом, чтобы максимальное значение 
+измеряемого сигнала соответствовало уровню 10 В на выходе измерительного устройства.
+\\$K_{U}=0,74$
+\\$K_{\omega}=0,079$
+\\$K_{I}=28,5$
+\\$K_{\alpha}=0,4$
+\par Выполним построение графиков переходных процессов при Мсм=0 и U=5 В.
+На рисунках 4-7 представлены графики переходных процессов.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/napr.eps}
+\caption{Переходный процесс по напряжению}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/tok.eps}
+\caption{Переходный процесс по току}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/skorost.eps}
+\caption{Переходный процесс по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/ygol.eps}
+\caption{Переходный процесс по углу поворота}
+\end{figure}
+
+
+\newpage
+\begin{center}
+\section{Исследование влияния момента сопротивления на вид переходных процессов } 
+\end{center}
+ \par Требуется получить графики переходных процессов при различных значениях момента сопротивления Мсм. Диапазон изменения Мсм: от 0
+ до $i_{p}*{M_\text{н}}$=40*0,04=1,6 Н*м. Графики переходных процессов представлены на рисунках 8 - 11.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/U2.eps}
+\caption{Переходные процессы по напряжению}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/I2.eps}
+\caption{Переходные процессы по току}
+\end{figure}
+\par Определим по графикам время переходного процесса и установившееся значения тока.
+\\При Мсм=0: tп=0,3 с, $I_{\text{уст}}$=0.
+\\При Мсм=0.6: tп=0,3 с, $I_{\text{уст}}$=4.
+\\При Мсм=1.2: tп=0,3 с, $I_{\text{уст}}$=8.2.
+\\При Мсм=1.6: tп=0,3 с, $I_{\text{уст}}$=10.76.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/w2.eps}
+\caption{Переходные процессы по угловой скорости}
+\end{figure}
+\par Определим по графикам время переходного процесса и установившееся значения скорости.
+\\При Мсм=0: tп=0,3 с, $\omega_{\text{уст}}$=10.
+\\При Мсм=0.6: tп=0,3 с, $\omega_{\text{уст}}$=6.55.
+\\При Мсм=1.2: tп=0,3 с, $\omega_{\text{уст}}$=3.19.
+\\При Мсм=1.6: tп=0,3 с, $\omega_{\text{уст}}$=1.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/a2.eps}
+\caption{Переходные процессы по углу поворота}
+\end{figure} 
+
+\newpage
+\begin{center}
+\section{Влияние момента инерции нагрузки на вид переходных процессов} 
+\end{center}
+ \par 
+Требуется изменять момент инерции нагрузки в диапазоне $\pm 50\%$  от заданного значения. 
+То есть будем изменять значения момента инерции нагрузки
+в пределах \\от 0,015 $\text{кг*м}^2$ до 0,045 $\text{кг*м}^2$.
+\par На рисунках 12 - 15 представлены графики переходных процессов при различных значениях $J_{m}$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/U3.eps}
+\caption{Переходные процессы по напряжению}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/I3.eps}
+\caption{Переходные процессы по току}
+\end{figure}
+
+\par Определим по графикам время переходного процесса и установившееся значения тока.
+\\При $J_{m}$=0,015: tп=0,25 с, $I_{\text{уст}}$=0.
+\\При $J_{m}$=0,02: tп=0,3 с, $I_{\text{уст}}$=0.
+\\При $J_{m}$=0,03: tп=0,35 с, $I_{\text{уст}}$=0.
+\\При $J_{m}$=0,045: tп=0,45 с, $I_{\text{уст}}$=0.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/w3.eps}
+\caption{Переходные процессы по угловой скорости}
+\end{figure}
+\par Определим по графикам время переходного процесса и установившееся значения скорости.
+\\При $J_{m}$=0,015: tп=0,25 с, $\omega_{\text{уст}}$=10.
+\\При $J_{m}$=0,02: tп=0,3 с, $\omega_{\text{уст}}$=10.
+\\При $J_{m}$=0,03: tп=0,35 с, $\omega_{\text{уст}}$=10.
+\\При $J_{m}$=0,045: tп=0,45 с, $\omega_{\text{уст}}$=10.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/a3.eps}
+\caption{Переходные процессы по углу поворота}
+\end{figure} 
+
+
+\newpage
+\begin{center}
+\section{Исследование влияния передаточного отношения редуктора на вид переходных процессов} 
+\end{center}
+ \par 
+Будем изменять передаточное отношение редуктора в диапазоне $\pm 75\%$  от заданного значения. То есть $i_{p}$ изменяется от 10 до 70.
+\par На рисунках 16 - 19 представлены графики переходных процессов, при Mcm=0.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/U4i0.eps}
+\caption{Переходные процессы по напряжению}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/I4i0.eps}
+\caption{Переходные процессы по току}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/w4i0.eps}
+\caption{Переходные процессы по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/a4i0.eps}
+\caption{Переходные процессы по углу поворота}
+\end{figure} 
+
+\par На рисунках 20 - 23 представлены переходные процессы, при Mcm=0.8 (половина максимального значения момента,вычисленного в пункте 3)
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/U5i08.eps}
+\caption{Переходные процессы по напряжению}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/I5i08.eps}
+\caption{Переходные процессы по току}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/w5i08.eps}
+\caption{Переходные процессы по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/ygol5.eps}
+\caption{Переходные процессы по углу поворота}
+\end{figure} 
+
+\newpage
+\begin{center}
+\section{Получение графиков переходных процессов при меньших значениях постоянных времени $T_\text{y}$ и $T_\text{я}$}
+\end{center}
+ \par Ty и Tя уменьшим на порядок, получим: $T_\text{y}$=0,003/10=0,0003; $T_\text{я}$=0,006/10=0,0006.
+ Выполним построение графиков переходных процессов при полученных значениях $T_\text{y}$ и $T_\text{я}$, которые представлены на рисунке 24.
+ Для более наглядного представления, все графики переходных процессов указаны на одном чертеже.
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{1/6.eps}
+\caption{Графики переходных процессов при различных значениях $T_\text{y}$ и $T_\text{я}$ }
+\end{figure} 
+ Из рисунка 24, можно заключить, что при уменьшении значений постоянных времени $T_\text{y}$ и $T_\text{я}$ на один порядок,
+ значение тока увеличилось, а все остальные параметры: напряжение, угловая скорость и угол поворота, остались практически неизменными.
+Так же можно сделать вывод, что при уменьшении значений постоянных времени, время переходного процесса и установившиеся значения угловой
+скорости и тока остались неизменными.
+\newpage
+\begin{center}
+\section{Математическое моделирование приближенной модели ЭМО} 
+\end{center}
+ \par 
+На рисунке 25 представлена структурная схема упрощенной модели ЭМО.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{1/yprsxema.eps}
+\caption{Cтруктурная схема упрощенной модели ЭМО}
+\end{figure}
+\par На рисунке 26 представлена схема моделирования упрощенной модели ЭМО.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{1/ypr.eps}
+\caption{Схема моделирования упрощенной модели ЭМО}
+\end{figure}
+
+На рисунках 27 и 28 соответственно представлены переходные процессы по угловой скорости и углу поворота.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/7w.eps}
+\caption{Переходный процесс по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/7a.eps}
+\caption{Переходный процесс по углу поворота}
+\end{figure} 
+
+\par Проанализируем погрешности, вызванные упрощением модели ЭМО.
+\par Сопоставим результаты исследования с данными, полученными в пункте 2.
+На рисунках 29 и 30 представлены сравнительные графики переходных процессов по угловой скорости и углу поворота, с данными полученными в пункте 2. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/7wcrav.eps}
+\caption{Сравнительные графики переходных процессов по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/7asrav.eps}
+\caption{Сравнительные графики переходных процессов по углу поворота}
+\end{figure}
+
+Сопоставим результаты исследования с данными, полученными в пункте 6.
+На рисунках 31 и 32 представлены сравнительные графики переходных процессов по угловой скорости и углу поворота, с данными полученными в пункте 6. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/8w_T.eps}
+\caption{Сравнительные графики переходных процессов по угловой скорости}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{1/8a_T.eps}
+\caption{Сравнительные графики переходных процессов по углу поворота}
+\end{figure}
+
+\newpage
+\begin{center}
+\section{Вывод математических моделей вход-состояние-выход для полной и упрощенной схем моделирования ЭМО} 
+\end{center}
+ \par 
+Для полной модели ЭМО:
+	\begin{align}
+		&&\begin{cases}
+		       \dot{\alpha} = \omega\\
+			M_\text{Д} - M_C = K_MI - M_C= J_\Sigma\dot{\omega}\\
+			T_\text{У}\dot{U_\text{У}} + U_\text{У} = K_\text{У}U\\
+			T_\text{Я}\dot{I} + I = K_\text{Д}(U_\text{У} - K_E\omega)\\
+		\end{cases}
+		\begin{cases}
+		\dot{\alpha} = \omega\\
+		\dot{\omega} = \displaystyle{\frac{K_M}{J_\Sigma}}I - \frac{1}{J_\Sigma}M_C\\
+		\dot{U_\text{У}} = -\displaystyle{\frac{1}{T_\text{У}}U_\text{У}} + \frac{K_\text{У}}{T_\text{У}}U\\
+		\dot{I} = -\displaystyle{\frac{K_E}{T_\text{Я}}}\omega - \frac{1}{T_\text{Я}}I + \frac{K_\text{Д}}{T_\text{Я}}U_\text{У}\\
+		\end{cases}
+		\label{ESETh}
+	\end{align}
+
+	Положим, Х - вектор состояния\\
+	
+	\begin{equation}
+		X =
+		\begin{bmatrix}
+			\alpha & \omega & I & U_\text{У}
+		\end{bmatrix}^T
+	\end{equation}
+	
+	\par U - вектор входных воздействий\\
+	\begin{equation}
+		U =
+		\begin{bmatrix}
+			U & M_C
+		\end{bmatrix}^T
+	\end{equation}
+
+		\par Получим систему матриц:
+	\begin{align}
+		\begin{cases}
+			\begin{bmatrix}
+				\dot{\alpha}\\
+				\dot{\omega}\\
+				\dot{I}\\
+				\dot{U_\text{У}}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				0 & 1 & 0 & 0\\
+				0 & 0 & \displaystyle{\frac{K_M}{J_\Sigma}} & 0\\
+				0 & -\displaystyle{\frac{K_E}{T_\text{Я}}} & -\displaystyle{\frac{1}{T_\text{Я}}} & \displaystyle{\frac{K_\text{Д}}{T_\text{Я}}}\\
+				0 & 0 & 0 & -\displaystyle{\frac{1}{T_\text{У}}}
+			\end{bmatrix}
+			\begin{bmatrix}
+				\alpha\\
+				\omega\\
+				I\\
+				U_\text{У}
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 & 0\\
+				0 & -\displaystyle{\frac{1}{J_\Sigma}}\\
+				0 & 0\\
+				\displaystyle{\frac{K_\text{У}}{T_\text{У}}} & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				U\\
+				M_C
+			\end{bmatrix}\\
+			\alpha = 
+			\begin{bmatrix}
+				1 & 0 & 0 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\alpha\\
+				\omega\\
+				I\\
+				U_\text{У}
+			\end{bmatrix}.
+		\end{cases}
+		\label{ESEFull}
+	\end{align}
+\par Выполним подстановку рассчитанных значений и получим матрицы модели вход-состояние-выход:
+	\begin{align}
+		\begin{cases}
+			\begin{bmatrix}
+				\dot{\alpha}\\
+				\dot{\omega}\\
+				\dot{I}\\
+				\dot{U_\text{У}}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				0 & 1 & 0 & 0\\
+				0 & 0 & 4142 & 0\\
+				0 & -17,67 & -166,67 & 5,17\\
+				0 & 0 & 0 & -333,3
+			\end{bmatrix}
+			\begin{bmatrix}
+				\alpha\\
+				\omega\\
+				I\\
+				U_\text{У}
+			\end{bmatrix}
+			+
+			\begin{bmatrix}
+				0 & 0\\
+				0 & -39447,73\\
+				0 & 0\\
+				900 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				U\\
+				M_C
+			\end{bmatrix}\\
+			\alpha = 
+			\begin{bmatrix}
+				1 & 0 & 0 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\alpha\\
+				\omega\\
+				I\\
+				U_\text{У}
+			\end{bmatrix}.
+		\end{cases}
+		\label{ESEFull}
+	\end{align}
+
+
+
+\par Для приближенной модели ЭМО.
+\par Используя структурную схему приближенной модели ЭМО, представленную на рисунке 25, получим формулы:
+\begin{equation}
+\dot\omega=\frac{KU-K_{f}M_{c}-\omega}{T_{m}}=8,726U-24,62M_{c}-13.699w
+\end{equation}
+
+
+\begin{equation}
+x=\begin{bmatrix} 0 & 1/T_{m}  \\ 1 &    0\end{bmatrix}\begin{bmatrix}\omega\\\alpha\end{bmatrix}+\begin{bmatrix}K/T_{m}\\0\end{bmatrix}U+\begin{bmatrix}K_{f}/T_{m}\\0\end{bmatrix}M_c\\
+\end{equation}
+\par Выполним подстановку рассчитанных значений:
+\begin{equation}
+x=\begin{bmatrix} 0 & -13.699  \\ 1 &    0\end{bmatrix}\begin{bmatrix}\omega\\\alpha\end{bmatrix}+\begin{bmatrix}8.726\\0\end{bmatrix}U+\begin{bmatrix}-24.62\\0\end{bmatrix}M_c\\
+\end{equation}
+
+\begin{equation}
+y=\begin{bmatrix} 0 & 1 \end{bmatrix}
+\end{equation}
+
+\newpage
+\begin{center}
+\section*{Вывод} 
+\end{center}
+ \par В данной лабораторной работе было проведено исследование характеристик электромеханического объекта управления, построенного на основе
+электродвигателя постоянного тока независимого возбуждения. Был произведен расчет параметров для полной и упрощенной математической 
+модели ЭМО. Было проведено математическое моделирование для полной модели ЭМО, в ходе которого были получены графики переходных
+процессов при различных значениях: момента сопротивления, момента инерции нагрузки, передаточного отношения редуктора.
+Из этого можно сделать вывод, что при различных значениях: момента сопротивления, момента инерции нагрузки, передаточного отношения редуктора,
+графики переходного процесса по напряжению совпадали. При увеличении момента сопротивления значения тока возрастает, а значения угловой скорости
+и угла поворота - уменьшаются.
+\par При увеличении момента инерции нагрузки увеличиваются значения тока , а значения угловой скорости
+и угла поворота - уменьшаются.
+\par При увеличении передаточного отношения редуктора
+ 
+\end{document}
+
