@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  1 JUN 2017 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=latex 2017.4.25)  6 JUN 2017 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,23 +888,23 @@ File: 1/a3.eps Graphic file (type eps)
 File: 1/U4i0.eps Graphic file (type eps)
  <1/U4i0.eps>
 File: 1/I4i0.eps Graphic file (type eps)
- <1/I4i0.eps>
+ <1/I4i0.eps> [12]
 File: 1/w4i0.eps Graphic file (type eps)
- <1/w4i0.eps> [12]
+ <1/w4i0.eps>
 File: 1/a4i0.eps Graphic file (type eps)
 
-<1/a4i0.eps>
+<1/a4i0.eps> [13]
 File: 1/U5i08.eps Graphic file (type eps)
- <1/U5i08.eps> [13]
+ <1/U5i08.eps>
 File: 1/I5i08.eps Graphic file (type eps)
- <1/I5i08.eps>
+ <1/I5i08.eps> [14]
 File: 1/w5i08.eps Graphic file (type eps)
- <1/w5i08.eps> [14]
+ <1/w5i08.eps>
 File: 1/ygol5.eps Graphic file (type eps)
  <1/ygol5.eps>
-[15]
+[15] [16]
 File: 1/6.eps Graphic file (type eps)
- <1/6.eps> [16]
+ <1/6.eps> [17]
 File: 1/yprsxema.eps Graphic file (type eps)
  <1/yprsxema.eps>
 File: 1/ypr.eps Graphic file (type eps)
@@ -912,27 +912,28 @@ File: 1/ypr.eps Graphic file (type eps)
 File: 1/7w.eps Graphic file (type eps)
  <1/7w.eps>
 File: 1/7a.eps Graphic file (type eps)
- <1/7a.eps> [17]
+ <1/7a.eps>
+[18]
 File: 1/7wcrav.eps Graphic file (type eps)
-
-<1/7wcrav.eps>
-File: 1/7asrav.eps Graphic file (type eps)
- <1/7asrav.eps> [18]
+ <1/7wcrav.eps>
 File: 1/8w_T.eps Graphic file (type eps)
- <1/8w_T.eps>
-File: 1/8a_T.eps Graphic file (type eps)
- <1/8a_T.eps> [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+ <1/8w_T.eps> [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
 
-Overfull \hbox (23.716pt too wide) in paragraph at lines 489--490
+Overfull \hbox (8.11212pt too wide) in paragraph at lines 482--482
+[] 
+ []
+
+
+Overfull \hbox (23.716pt too wide) in paragraph at lines 483--484
 []\T2A/cmr/m/n/12 ¬ыполним под-ста-нов-ку рас-счи-тан-ных зна-че-ний и по-лу-чи
 м мат-ри-цы мо-де-ли вход-состо€ние-
  []
@@ -948,12 +949,12 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred when \ifx on line 161 was incomplete) 
 Here is how much of TeX's memory you used:
- 5019 strings out of 493014
- 66919 string characters out of 6139343
+ 5015 strings out of 493014
+ 66879 string characters out of 6139343
  150866 words of memory out of 5000000
- 8439 multiletter control sequences out of 15000+600000
+ 8437 multiletter control sequences out of 15000+600000
  21401 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,24n,39p,1222b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on lab10.dvi (24 pages, 36412 bytes).
+Output written on lab10.dvi (24 pages, 36888 bytes).
